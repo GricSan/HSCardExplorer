@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">HS Card Explorer</string>
+
+    <!-- HomeScreen values-->
+    <string name="button_text__home_screen_browse_cards">Browse Cards</string>
+
+</resources>

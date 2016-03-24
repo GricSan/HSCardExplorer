@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.HomeScreenActivity">
+
+    <Button
+        android:id="@+id/button_home_screen_browse_cards"
+        style="@style/HomeScreenButtonStyle"
+        android:layout_centerInParent="true"
+        android:text="@string/button_text__home_screen_browse_cards"
+        android:onClick="onClick"/>
+
+</RelativeLayout>
