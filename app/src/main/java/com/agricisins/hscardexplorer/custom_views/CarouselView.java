@@ -20,9 +20,9 @@ public class CarouselView extends LinearLayout implements View.OnClickListener {
     private boolean isAnimated = false;
 
     private ArrayList<Integer> mData;
-    private int mLeftPositionCounter = 0;
-    private int mCentralPositionCounter = 1;
-    private int mRightPositionCounter = 2;
+    private int mLeftPositionCounter;
+    private int mCentralPositionCounter;
+    private int mRightPositionCounter;
 
 
     private ImageView mLeftReserveImage;
@@ -54,6 +54,9 @@ public class CarouselView extends LinearLayout implements View.OnClickListener {
     private void initViews(Context context) {
         LayoutInflater.from(context).inflate(R.layout.carousel_view, this);
         mData = new ArrayList<>();
+        mLeftPositionCounter = 0;
+        mCentralPositionCounter = 1;
+        mRightPositionCounter = 2;
 
         mLeftReserveImage = (ImageView) findViewById(R.id.carousel_left_reserve_image);
         mLeftImage = (ImageView) findViewById(R.id.carousel_left_image);
