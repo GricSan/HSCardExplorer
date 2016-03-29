@@ -6,15 +6,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
+import android.widget.LinearLayout;
 
 import com.agricisins.hscardexplorer.R;
 
 import java.util.ArrayList;
 
-public class CarouselView extends RelativeLayout implements View.OnClickListener {
+public class CarouselView extends LinearLayout implements View.OnClickListener {
 
     private static final String TAG = "GricSan_Log";
+
+    private boolean isAnimated = false;
 
     private ArrayList<Integer> mData;
     private int mLeftPositionCounter = 0;
@@ -137,11 +139,31 @@ public class CarouselView extends RelativeLayout implements View.OnClickListener
         mRightImage.setImageResource(mData.get(mRightPositionCounter));
     }
 
+    /**
+     * @param data to be displayed in Carousel
+     */
     public void setData(ArrayList<Integer> data) {
         mData = data;
     }
 
+    /**
+     * @return the number of items in Carousel
+     */
     public int getDataSize() {
         return mData.size();
+    }
+
+    /**
+     * @return "true" if transition between items is animated
+     */
+    public boolean isAnimated() {
+        return isAnimated;
+    }
+
+    /**
+     * @param isAnimated indicates whether transition between items should be animated
+     */
+    public void setAnimated(boolean isAnimated) {
+        this.isAnimated = isAnimated;
     }
 }

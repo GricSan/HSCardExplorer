@@ -20,7 +20,7 @@
     <com.agricisins.hscardexplorer.custom_views.CarouselView
         android:id="@+id/carousel_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/carousel_middle_image_height"
         android:layout_below="@+id/toolbar"/>
 
     <EditText
