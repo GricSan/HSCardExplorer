@@ -6,19 +6,6 @@
               android:orientation="horizontal">
 
     <FrameLayout
-        android:id="@+id/carousel_left_reserve_container"
-        android:layout_width="0dp"
-        android:layout_height="0dp">
-
-        <ImageView
-            android:id="@+id/carousel_left_reserve_image"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:contentDescription="@string/carousel_left_reserve_image_descr"/>
-
-    </FrameLayout>
-
-    <FrameLayout
         android:id="@+id/carousel_left_container"
         android:layout_width="0dp"
         android:layout_height="match_parent"
@@ -29,16 +16,30 @@
             android:id="@+id/carousel_left_image"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_gravity="center"
             android:contentDescription="@string/carousel_left_image_descr"/>
 
     </FrameLayout>
 
-    <FrameLayout
+    <RelativeLayout
         android:id="@+id/carousel_center_container"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="2"
-        android:clickable="true">
+        android:clickable="true"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/carousel_left_reserve_image"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:contentDescription="@string/carousel_left_reserve_image_descr"/>
+
+        <ImageView
+            android:id="@+id/carousel_right_reserve_image"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:contentDescription="@string/carousel_right_reserve_image_descr"/>
 
         <ImageView
             android:id="@+id/carousel_center_image"
@@ -46,7 +47,8 @@
             android:layout_height="match_parent"
             android:contentDescription="@string/carousel_center_image_descr"/>
 
-    </FrameLayout>
+
+    </RelativeLayout>
 
 
     <FrameLayout
@@ -60,22 +62,9 @@
             android:id="@+id/carousel_right_image"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_gravity="center"
             android:contentDescription="@string/carousel_right_image_descr"/>
 
     </FrameLayout>
-
-    <FrameLayout
-        android:id="@+id/carousel_right_reserve_container"
-        android:layout_width="0dp"
-        android:layout_height="0dp">
-
-        <ImageView
-            android:id="@+id/carousel_right_reserve_image"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:contentDescription="@string/carousel_right_reserve_image_descr"/>
-
-    </FrameLayout>
-
 
 </LinearLayout>

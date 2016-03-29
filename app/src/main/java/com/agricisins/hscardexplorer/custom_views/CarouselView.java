@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 import com.agricisins.hscardexplorer.R;
 
@@ -32,7 +33,7 @@ public class CarouselView extends LinearLayout implements View.OnClickListener {
     private ImageView mRightReserveImage;
 
     private FrameLayout mLeftImageContainer;
-    private FrameLayout mCenterImageContainer;
+    private RelativeLayout mCenterImageContainer;
     private FrameLayout mRightImageContainer;
 
 
@@ -65,7 +66,7 @@ public class CarouselView extends LinearLayout implements View.OnClickListener {
         mRightReserveImage = (ImageView) findViewById(R.id.carousel_right_reserve_image);
 
         mLeftImageContainer = (FrameLayout) findViewById(R.id.carousel_left_container);
-        mCenterImageContainer = (FrameLayout) findViewById(R.id.carousel_center_container);
+        mCenterImageContainer = (RelativeLayout) findViewById(R.id.carousel_center_container);
         mRightImageContainer = (FrameLayout) findViewById(R.id.carousel_right_container);
 
         mLeftImageContainer.setOnClickListener(this);
@@ -107,6 +108,7 @@ public class CarouselView extends LinearLayout implements View.OnClickListener {
     }
 
     private void scrollLeft() {
+        // TODO: 3/29/2016 add scroll animation
         mLeftPositionCounter = mCentralPositionCounter;
         mCentralPositionCounter = mRightPositionCounter;
         mRightPositionCounter++;
@@ -119,6 +121,7 @@ public class CarouselView extends LinearLayout implements View.OnClickListener {
     }
 
     private void scrollRight() {
+        // TODO: 3/29/2016 Add scroll animation
         mRightPositionCounter = mCentralPositionCounter;
         mCentralPositionCounter = mLeftPositionCounter;
         mLeftPositionCounter--;
