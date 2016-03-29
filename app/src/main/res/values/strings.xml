@@ -8,5 +8,6 @@
     <string name="carousel_center_image_descr">center image</string>
     <string name="carousel_right_image_descr">right image</string>
     <string name="carousel_right_reserve_image_descr">reserved right image</string>
+    <string name="find_hint">Find...</string>
 
 </resources>

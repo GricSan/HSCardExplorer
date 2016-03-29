@@ -19,5 +19,6 @@ public class CardBrowserActivity extends AppCompatActivity {
             toolbar.setTitle("Card Browser");
             setSupportActionBar(toolbar);
         }
+
     }
 }
