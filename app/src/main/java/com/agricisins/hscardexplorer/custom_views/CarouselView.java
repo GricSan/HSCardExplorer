@@ -11,6 +11,7 @@ import android.widget.LinearLayout;
 import com.agricisins.hscardexplorer.R;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class CarouselView extends LinearLayout implements View.OnClickListener {
 
@@ -53,19 +54,12 @@ public class CarouselView extends LinearLayout implements View.OnClickListener {
     private void initViews(Context context) {
         LayoutInflater.from(context).inflate(R.layout.carousel_view, this);
         mData = new ArrayList<>();
-        mData.add(R.drawable.dru_shit);
-        mData.add(R.drawable.mind_control);
-        mData.add(R.drawable.op_shit);
-        mData.add(R.drawable.pyroblast);
-        mData.add(R.drawable.warlock_op_op);
 
         mLeftReserveImage = (ImageView) findViewById(R.id.carousel_left_reserve_image);
         mLeftImage = (ImageView) findViewById(R.id.carousel_left_image);
         mCenterImage = (ImageView) findViewById(R.id.carousel_center_image);
         mRightImage = (ImageView) findViewById(R.id.carousel_right_image);
         mRightReserveImage = (ImageView) findViewById(R.id.carousel_right_reserve_image);
-
-        redrawImages();
 
         mLeftImageContainer = (FrameLayout) findViewById(R.id.carousel_left_container);
         mCenterImageContainer = (FrameLayout) findViewById(R.id.carousel_center_container);
@@ -139,11 +133,28 @@ public class CarouselView extends LinearLayout implements View.OnClickListener {
         mRightImage.setImageResource(mData.get(mRightPositionCounter));
     }
 
+    private void resetPositionCounters() {
+        mLeftPositionCounter = 0;
+        mCentralPositionCounter = 1;
+        mRightPositionCounter = 2;
+    }
+
     /**
      * @param data to be displayed in Carousel
      */
     public void setData(ArrayList<Integer> data) {
         mData = data;
+        resetPositionCounters();
+        redrawImages();
+    }
+
+    /**
+     * @param data to be displayed in Carousel
+     */
+    public void setData(Integer[] data) {
+        Collections.addAll(mData, data);
+        resetPositionCounters();
+        redrawImages();
     }
 
     /**
@@ -154,7 +165,7 @@ public class CarouselView extends LinearLayout implements View.OnClickListener {
     }
 
     /**
-     * @return "true" if transition between items is animated
+     * @return "true" if transition between items is animated, otherwise - "false"
      */
     public boolean isAnimated() {
         return isAnimated;
